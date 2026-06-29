@@ -1,0 +1,24 @@
+name: preprocessing_v1
+source: MIMIC-III/IV ICU extracts
+variables:
+  total_expected: 125
+  groups:
+    - demographics
+    - vital_signs
+    - laboratory_results
+    - sofa_score
+    - apache_iv
+    - saps_scores
+cohort:
+  sepsis3_first_24h: true
+  minimum_age_years: 18
+  minimum_icu_los_days: 1
+  require_discharge_information: true
+missingness:
+  threshold: 0.70
+  numeric_imputation: median
+  discrete_imputation: null
+aggregation:
+  continuous_variables_within_24h: mean
+  window_hours: 24
+output_dir: data/derived/preprocessing/v1

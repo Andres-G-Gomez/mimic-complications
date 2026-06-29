@@ -1,0 +1,9 @@
+name: filtered_v1
+based_on: preprocessing_v1
+criteria:
+  sepsis3_first_24h: true
+  minimum_age_years: 18
+  minimum_icu_los_days: 1
+  require_discharge_information: true
+  missing_rate_threshold: 0.70
+output_dir: data/derived/filtered/v1
